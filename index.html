@@ -1,46 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Made By Ethan</title>
-  <style>
-    html, body {
-      margin: 0; padding: 0; height: 100%; overflow: hidden;
-      font-family: sans-serif;
-      background: black;
-    }
-    #bg-video {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      object-fit: cover;
-      z-index: -2;
-    }
-    .blur-overlay {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw; height: 100vh;
-      backdrop-filter: blur(5px);
-      z-index: -1;
-    }
-    .content {
-      position: relative;
-      z-index: 1;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fullscreen YouTube Background</title>
+<style>
+  /* Remove default margin/padding */
+  html, body {
+    margin: 0; 
+    padding: 0; 
+    height: 100%; 
+    overflow: hidden;
+  }
+  /* Container to hold iframe */
+  .video-background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+  }
+  /* Style iframe to cover whole screen */
+  .video-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 177.77vh; /* 100 * (16/9) to maintain aspect ratio */
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Make iframe ignore mouse */
+  }
+  /* Your content on top */
+  .content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+  }
+</style>
 </head>
 <body>
-  <video id="bg-video" autoplay muted loop playsinline>
-    <source src="https://raw.githubusercontent.com/Asteria-Devs/TAR/main/cherry.mp4" type="video/mp4" />
-  </video>
-  <div class="blur-overlay"></div>
-  <div class="content">
-    <h1>Hii</h1>
-    <p>blah blah about me yes yes</p>
-  </div>
+
+<div class="video-background">
+  <iframe 
+    src="https://www.youtube.com/embed/hxyCRunPVrc?autoplay=1&mute=1&loop=1&playlist=hxyCRunPVrc&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&rel=0"
+    frameborder="0" 
+    allow="autoplay; fullscreen" 
+    allowfullscreen
+    title="Background Video">
+  </iframe>
+</div>
+
+<div class="content">
+  <h1>Hello!</h1>
+  <p>This content is displayed over the YouTube video background.</p>
+</div>
+
 </body>
 </html>
