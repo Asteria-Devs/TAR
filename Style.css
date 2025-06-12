@@ -1,11 +1,36 @@
-.blur-overlay { 
-position: fixed;
-  width: 100%;
+html, body {
+  margin: 0;
+  padding: 0;
   height: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+#bg-video {
+  position: fixed;
   top: 0;
   left: 0;
-  backdrop-filter: blur(25px); // or try 15px
-  mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 70%);
-  -webkit-mask-image: radial-gradient(circle at center, rgba(0, 0, 0, 1) 30%, rgba(0, 0, 0, 0) 70%);
-z-index: -1;
-} 
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
+}
+
+
+.blur-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
