@@ -41,7 +41,7 @@
   controls.dampingFactor = 0.05;
 
   const loader = new GLTFLoader();
-  loader.load('models/Project%20Name.glb', (gltf) => {
+  loader.load('models/projectname.glb', (gltf) => {
     scene.add(gltf.scene);
     gltf.scene.scale.set(0.5, 0.5, 0.5);
   }, undefined, (error) => {
