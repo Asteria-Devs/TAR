@@ -62,6 +62,46 @@
       position: relative;
     }
 
+    .intro-section {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: rgba(255,255,255,0.1); /* 10% white */
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      padding: 2rem 1.5rem;
+    }
+
+    .intro-section h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      text-align: center;
+      color: #fff;
+      text-shadow: 0 2px 12px #0008;
+    }
+
+    .intro-section h3 {
+      margin-top: 0.5rem;
+      font-weight: normal;
+      text-align: center;
+      color: #c0ffef;
+      text-shadow: 0 2px 12px #0006;
+    }
+
+    .intro-section ul {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.07rem;
+      padding-left: 1.1em;
+    }
+    .intro-section li {
+      margin-bottom: 0.7em;
+    }
+    .intro-section p:last-child {
+      font-style: italic;
+      color: #80d8ea;
+      margin-bottom: 0;
+    }
+
     .grid {
       display: flex;
       flex-wrap: wrap;
@@ -74,9 +114,6 @@
 
     .card {
       background-color: #4b0082;
-      background-image: url('data:image/svg+xml;utf8,<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg"><polygon points="10,15 12,22 19,22 13,27 15,34 10,29 5,34 7,27 1,22 8,22" fill="black" /></svg>');
-      background-repeat: no-repeat;
-      background-size: 200px 200px;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
@@ -209,9 +246,29 @@
   <div id="stars"></div>
 
   <header>Invatations for the open evening</header>
-<div style="text-align:center; margin-top: -1rem;">
-  <a href="index.html" class="buy-btn">Back to Homepage</a>
-</div>
+
+  <div class="intro-section">
+    <h2>Come join us on our open evening.</h2>
+    <h3>On the 23rd of July we are pleased to announce our opening</h3>
+    <p>
+      This will be a great time for us and hopefully for you as well!<br>
+      We just have a few simple requests:
+    </p>
+    <ul>
+      <li>~ Please be polite and civil. Our staff are new, do not expect a Michelin star performance!</li>
+      <li>~ Please refrain from being very loud and obnoxious; whilst we facilitate social gatherings, we ask guests to respect others.</li>
+      <li>~ Please try to take care of our equipment! We are not made of money and ask for you to take the utmost care of our things!</li>
+      <li>~ Enjoy your time at Booked, don’t forget to sign up to our membership program for even MORE rewards!</li>
+    </ul>
+    <p>
+      Whilst it costs nothing to come, if you have old books you would wish to donate we would LOVE to receive them—in exchange, you can receive credit on your Booked Card!
+    </p>
+  </div>
+
+  <div style="text-align:center; margin-top: -1rem;">
+    <a href="index.html" class="buy-btn">Back to Homepage</a>
+  </div>
+
   <script>
     function showModal(title, description, link) {
       document.getElementById('modal-title').textContent = title;
@@ -241,4 +298,3 @@
   </script>
 </body>
 </html>
-
