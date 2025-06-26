@@ -5,6 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Invitations</title>
   <style>
+    .side-img {
+  position: absolute;
+  top: 160px; /* Adjust as needed to align with the invitation box */
+  width: 120px; /* Adjust size as needed */
+  height: auto;
+  z-index: 2;
+}
+
+.left-img {
+  left: 30px;
+}
+
+.right-img {
+  right: 30px;
+}
+@media (max-width: 900px) {
+  .side-img {
+    display: none;
+  }
+}
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
@@ -244,6 +264,25 @@
 </head>
 <body>
   <div id="stars"></div>
+  <div id="stars"></div>
+
+  <!-- Image on the left side -->
+  <img src="files/Booked.png" alt="Booked Logo" class="side-img left-img">
+
+  <header>Invatations for the open evening</header>
+
+  <div class="intro-section">
+    ...
+    <!-- The rest of your invitation box code stays the same -->
+  </div>
+
+  <!-- Image on the right side -->
+  <img src="files/Booked.png" alt="Booked Logo" class="side-img right-img">
+
+  <div style="text-align:center; margin-top: -1rem;">
+    <a href="index.html" class="buy-btn">Back to Homepage</a>
+  </div>
+  ...
 
   <header>Invatations for the open evening</header>
 
