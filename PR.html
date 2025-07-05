@@ -1,1 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Press Release</title>
+  <style>
+    .side-img {
+  position: absolute;
+  top: 160px; /* Adjust as needed to align with the invitation box */
+  width: 240px; /* Adjust size as needed */
+  height: auto;
+  z-index: 2;
+}
+
+.left-img {
+  left: 30px;
+}
+
+.right-img {
+  right: 30px;
+}
+@media (max-width: 900px) {
+  .side-img {
+    display: none;
+  }
+}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(to bottom right, #f06b6b, #6bc1f0);
+      z-index: -2;
+    }
+
+    #stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .star {
+      position: absolute;
+      background: yellow ;
+      clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+      );
+      opacity: 0.6;
+      animation: twinkle 1s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 0.1; }
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      font-size: 2rem;
+      font-weight: bold;
+      z-index: 1;
+      position: relative;
+    }
+
+    .intro-section {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: rgba(255,255,255,0.1); /* 10% white */
+      border-radius: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+      padding: 2rem 1.5rem;
+    }
+
+    .intro-section h2 {
+      margin-top: 0;
+      font-size: 2rem;
+      text-align: center;
+      color: #fff;
+      text-shadow: 0 2px 12px #0008;
+    }
+
+    .intro-section h3 {
+      margin-top: 0.5rem;
+      font-weight: normal;
+      text-align: center;
+      color: #c0ffef;
+      text-shadow: 0 2px 12px #0006;
+    }
+
+    .intro-section ul {
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.07rem;
+      padding-left: 1.1em;
+    }
+    .intro-section li {
+      margin-bottom: 0.7em;
+    }
+    .intro-section p:last-child {
+      font-style: italic;
+      color: #80d8ea;
+      margin-bottom: 0;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #4b0082;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s;
+      cursor: pointer;
+      flex: 1 1 auto;
+      max-width: 350px;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 75%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      margin: 0 0 0.5rem;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: #1a1a2e;
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 500px;
+      text-align: center;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .buy-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #7b2cbf;
+      color: white;
+      padding: 0.5rem 1.2rem;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .buy-btn:hover {
+      background: #9d4edd;
+    }
+
+    /* --- Reviews --- */
+    .review-side {
+      position: fixed;
+      top: 50%;
+      width: 200px;
+      transform: translateY(-50%);
+      background: #333;
+      color: white;
+      padding: 1rem;
+      border-radius: 12px;
+      font-style: italic;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+
+    .review-left {
+      left: 10px;
+    }
+
+    .review-right {
+      right: 10px;
+    }
+
+    .review-author {
+      font-weight: bold;
+      text-align: right;
+      font-style: normal;
+      margin-top: 0.5rem;
+    }
+
+    .review-mobile {
+      background: #333;
+      color: white ;
+      padding: 1rem;
+      border-radius: 12px;
+      margin-top: 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      font-style: italic;
+    }
+
+    @media (min-width: 768px) {
+      .review-mobile {
+        display: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .review-side {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="stars"></div>
+  <div id="stars"></div>
+
+  <!-- Image on the left side -->
+  <img src="Booked.jpg" alt="Booked Logo" class="side-img left-img">
+
+  <header>Invitations for the open evening</header>
+  <!-- Image on the right side -->
+  <img src="Booked.jpg" alt="Booked Logo" class="side-img right-img">
+
+  <div style="text-align:center; margin-top: -1rem;">
+    <a href="index.html" class="buy-btn">Back to Homepage</a>
+  </div>
+
+
+  <div class="intro-section">
+    <h2>A note to the press.</h2>
+    <h3>On the 23rd of July we are pleased to announce our opening of new business BOOKED!</h3>
+    <p>
+    We strive to create a nice place for students and teachers alike to study or complete work while offering good food at good prices! Seperating work from home.<br>
+      Here is what our team as to say about it:
+    </p>
+    <ul>
+      <li> We are honoured  to be sharing this moment with everyone. We look forward to working closely with the media to create the biggest success possibl! </li>
+      <li> We are hoping that if this is successful we can open our doors in more locations, providing more places for students and teachers alike.</li>
+      <li> We will be addressing any questions we get, and will post them here as of when we recieve them</li>
+      <li> Now remember! Enjoy your time at Booked, don’t forget to sign up to our membership program for even MORE rewards!</li>
+    </ul>
+    <p>
+      Good books, good food, good life!
+    </p>
+  </div>
+
+  <div style="text-align:center; margin-top: -1rem;">
+    <a href="index.html" class="buy-btn">Back to Homepage</a>
+  </div>
+
+  <script>
+    function showModal(title, description, link) {
+      document.getElementById('modal-title').textContent = title;
+      document.getElementById('modal-desc').textContent = description;
+      document.getElementById('modal-link').href = link;
+      document.getElementById('modal').style.display = 'flex';
+    }
+
+    function hideModal() {
+      document.getElementById('modal').style.display = 'none';
+    }
+
+    // Stars
+    const starCount = 350;
+    const starContainer = document.getElementById('stars');
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      const size = Math.random() * 6 + 8 + 'px';
+      star.style.width = size;
+      star.style.height = size;
+      star.style.top = Math.random() * 100 + '%';
+      star.style.left = Math.random() * 100 + '%';
+      star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      starContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
 
