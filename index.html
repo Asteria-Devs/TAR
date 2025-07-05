@@ -30,19 +30,32 @@
       pointer-events: none;
     }
 
+    body {
+      min-height: 100vh;
+      min-width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .content {
       position: relative;
       z-index: 1;
       text-align: center;
       padding: 4rem 2rem;
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 16px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.05);
+      display: inline-block;
+      max-width: 90vw;
     }
 
-    /* White highlight background for all text inside .content */
-    .content, .content * {
-      background: rgba(255, 255, 255, 0.85);
+    .content h1, .content p {
+      margin: 1.5rem 0;
+      background: rgba(255,255,255,0.7);
       border-radius: 8px;
-      padding: 0.2em 0.5em;
-      display: inline;
+      padding: 0.4em 1em;
+      display: inline-block;
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
     }
@@ -56,6 +69,7 @@
       box-shadow: none;
       border-radius: 0;
       padding: 0;
+      margin-top: 2rem;
     }
 
     .button {
@@ -66,7 +80,9 @@
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.2s ease;
+      transition: background 0.2s ease, color 0.2s ease;
+      font-size: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
     }
 
     .button:hover {
@@ -94,7 +110,6 @@
     <a href="menu.html" class="button">Press Release</a>
     <a href="ava.html" class="button">Invitations</a>
     <a href="aboutus.html" class="button">Letter to sponsors</a>
-    <!-- New buttons below -->
     <a href="PR.html" class="button">Pr disaster</a>
     <a href="event.html" class="button">Future plans</a>
   </div>
