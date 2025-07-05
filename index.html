@@ -42,20 +42,20 @@
       position: relative;
       z-index: 1;
       text-align: center;
-      padding: 4rem 2rem;
-      background: rgba(255, 255, 255, 0.85);
-      border-radius: 16px;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.05);
+      padding: 0; /* No more big padding */
+      background: none; /* Remove big white box */
+      border-radius: 0;
+      box-shadow: none;
       display: inline-block;
       max-width: 90vw;
     }
 
-    .content h1, .content p {
-      margin: 1.5rem 0;
-      background: rgba(255,255,255,0.7);
-      border-radius: 8px;
-      padding: 0.4em 1em;
+    .highlight {
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      padding: 0.4em 1.5em;
       display: inline-block;
+      margin: 0.5em 0;
       box-decoration-break: clone;
       -webkit-box-decoration-break: clone;
     }
@@ -103,9 +103,8 @@
 </div>
 
 <div class="content">
-  <h1>Welcome</h1>
-  <p>Good books, Good food, Good life.</p>
- 
+  <h1 class="highlight">Welcome</h1>
+  <p class="highlight">Welcome to our restaurant.<br>Good books, Good food, Good life.</p>
   <div class="button-container">
     <a href="menu.html" class="button">Press Release</a>
     <a href="ava.html" class="button">Invitations</a>
