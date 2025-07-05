@@ -30,20 +30,6 @@
       pointer-events: none;
     }
 
-    /* Blurred overlay with gradient */
-    .blur-layer {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -2;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      pointer-events: none;
-      mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0.2) 80%);
-      -webkit-mask-image: radial-gradient(circle at center, rgba(0,0,0,1) 40%, rgba(0,0,0,0.2) 80%);
-    }
-
     .content {
       position: relative;
       z-index: 1;
@@ -51,14 +37,14 @@
       padding: 4rem 2rem;
     }
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
+    /* White highlight background for all text inside .content */
+    .content, .content * {
+      background: rgba(255, 255, 255, 0.85);
+      border-radius: 8px;
+      padding: 0.2em 0.5em;
+      display: inline;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
     }
 
     .button-container {
@@ -66,6 +52,10 @@
       justify-content: center;
       gap: 1rem;
       flex-wrap: wrap;
+      background: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0;
     }
 
     .button {
@@ -90,25 +80,24 @@
 <div class="video-background">
   <iframe
     src="https://www.youtube.com/embed/atjAURP2_9o?autoplay=1&mute=1&loop=1&playlist=atjAURP2_9o&controls=0&modestbranding=1&rel=0&showinfo=0&iv_load_policy=3&fs=0"
-    title="The Accord Restraunt "
+    title="YouTube video"
     allow="autoplay; encrypted-media"
     allowfullscreen
   ></iframe>
 </div>
 
-
 <div class="content">
   <h1>Welcome</h1>
   <p>Good books, Good food, Good life.</p>
  
-<div class="button-container">
-  <a href="menu.html" class="button">Press Release</a>
-  <a href="ava.html" class="button">Invitations</a>
-  <a href="aboutus.html" class="button">Letter to sponsors</a>
-  <!-- New buttons below -->
-  <a href="PR.html" class="button">Pr disaster</a>
-  <a href="event.html" class="button">Future plans</a>
-</div>
+  <div class="button-container">
+    <a href="menu.html" class="button">Press Release</a>
+    <a href="ava.html" class="button">Invitations</a>
+    <a href="aboutus.html" class="button">Letter to sponsors</a>
+    <!-- New buttons below -->
+    <a href="PR.html" class="button">Pr disaster</a>
+    <a href="event.html" class="button">Future plans</a>
+  </div>
 </div>
 
 </body>
